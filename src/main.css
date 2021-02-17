@@ -39,3 +39,7 @@ h1{
     margin-right: 10px;
 
 }
+.btn{
+    margin: 20px;
+    display: none;
+}

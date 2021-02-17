@@ -2,7 +2,7 @@ import { Component } from "react";
 import React from "react";
 import { Paper, TextField } from '@material-ui/core';
 
-class SearchBar extends React.Component{
+class Comment extends React.Component{
     state = {
         searchTerm : '',
     }
@@ -19,7 +19,7 @@ class SearchBar extends React.Component{
         <div className="papper">
                <Paper elevation = {6} style = {{padding:'10px'}}>
 
-               <TextField fullWidth label = "Search..." onChange={(e)=>handleSort(e.target.value)} >
+               <TextField fullWidth label = "Search..." >
 
                </TextField>
 
@@ -30,4 +30,4 @@ class SearchBar extends React.Component{
 
     }
 }
-export default SearchBar
+export default Comment

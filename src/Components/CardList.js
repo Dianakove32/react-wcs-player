@@ -1,7 +1,7 @@
 import Card from './Card';
-
+import { Button } from '@material-ui/core';
 import React from 'react';
-import Player from './Player';
+
 
 
 class CardList extends React.Component {
@@ -11,13 +11,22 @@ class CardList extends React.Component {
      path:'https://youtu.be/TdYUQ3gOrvQ',
      title: 'F9 the fast saga',
      descript:'descript'
- }}
+ }
+
+}
+
     render() {
-        const {data, handleSetMovie} = this.props
-        let pro=this.state
+        const {dataF, handleSetMovie, isFiltered, isEmpty,showAll} = this.props
+
+
+
+
         return (
             <div className='cardList'>
-                {data.map((el, index) =>
+             {isFiltered? <Button  variant="contained" color="primary" onClick={()=>showAll()}>
+  Show all movie </Button> :null}
+   { isEmpty ? <p>No video</p>:null}
+                {dataF.map((el, index) =>
                     <Card {...el} key={index} handleSetMovie = {handleSetMovie}
                     />
 
