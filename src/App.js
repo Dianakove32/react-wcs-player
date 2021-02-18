@@ -6,7 +6,7 @@ import SearchBar from "./Components/searchbar";
 import data from "./Components/data";
 import Btn from "./Components/Button";
 import Comment from "./Components/Comment";
-import PapperComment from "./Components/CommentPapper";
+
 
 class App extends Component {
   constructor() {
@@ -43,21 +43,22 @@ class App extends Component {
   }
 
   render() {
-    const { pickedMovie, movieNameForSearch} = this.state;
+    const { pickedMovie, movieNameForSearch } = this.state;
     console.log(movieNameForSearch)
     const handleSetMovie2 = this.handleSetMovie2;
     const dataF = data.filter((oneMovie) => { return oneMovie.title.includes(movieNameForSearch) })
     return (
-      <div>
+      <div className="mainContainer">
         <h1> Wild-Code-School Player</h1>
-        <SearchBar handleSort={this.handleSort} />
 
+ <SearchBar handleSort={this.handleSort} />
         <div className="App">
-<div>
-    <Player movie={pickedMovie} />
- <Comment />
 
-</div>
+          <div>
+            <Player movie={pickedMovie} />
+            <Comment />
+
+          </div>
 
 
           <CardList handleSetMovie={handleSetMovie2}

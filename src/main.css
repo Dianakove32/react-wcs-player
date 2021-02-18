@@ -1,24 +1,48 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.mainContainer{
+max-width: 1300px;
+margin: 0 auto;
+}
+.App {
+    display: flex;
+
+
+flex-wrap: wrap;
+
+
+justify-content: space-around;
+}
 .card{
     display: flex;
     font-size: 14px;
-
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+border-radius: 5px;
+    box-shadow: 5px 5px 8px 5px rgba(34, 60, 80, 0.2);
         margin: 10px;
 
+}
+.card:hover{
+cursor: pointer;
+transform: scale(1,1.05);
 }
 .papper{
-
-
     background-color: rgb(200, 209, 218);
 }
-.PapperComment{
-margin-top: 5px;
+.papper2{
+    display: flex;
+    padding: 10px;
 
 }
+.PapperComment{
+ width: 80%;
+ margin-right: 10px;
+}
 .player{
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 5px 5px 8px 5px rgba(34, 60, 80, 0.2);
         margin: 10px;
         height: 500px;
+        padding: 10px;
 }
 .descript, .title{
     margin: 20px 10px;
@@ -29,12 +53,7 @@ margin-top: 5px;
     margin: 10px;
 }
 
-.App {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
 
-}
 h1{
     text-align: center;
 }
@@ -44,6 +63,13 @@ h1{
 
 }
 .btn{
-    margin: 20px;
-    display: none;
+  width: 100px;
+height: 80px;
+margin-top: 5px;
+
+
+}
+h1{
+    font-size: 44px;
+    color: #f50057;
 }

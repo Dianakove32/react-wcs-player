@@ -1,53 +1,75 @@
 import { Component } from "react";
 import React from "react";
-import { Paper, TextField } from '@material-ui/core';
+import { Paper, TextField, Button } from '@material-ui/core';
 import PapperComment from "./CommentPapper";
-class Comment extends React.Component{
-    constructor(){
+import '../main.css'
+class Comment extends React.Component {
+    constructor() {
         super()
-        this.state={
-            text:'',
-            comment:[]
-        }}
-        handleOnChange=(e)=>{
-            this.setState({
-                text: e.target.value
-            })
+        this.state = {
+            text: '',
+            comment: []
         }
-        onClick=(item)=>{
-
+    }
+    handleOnChange = (e) => {
 
             this.setState({
-                 comment:[...this.state.comment,item]
-            })
-        }
-    render(){
-const {text, comment}=this.state
-console.log(text)
-        return(
-        <div className="papper2">
-               <Paper elevation = {6} style = {{padding:'10px'    }}>
-
-               <TextField id="filled-basic"
-               label="Filled"
-               variant="filled"
-                fullWidth
-                label = "Enter comment..."
-                value={text}
-                    onChange={this.handleOnChange}
-                />
-       </Paper>
-       <button onClick={()=>this.onClick(text)}></button>
-       <div>
-            {comment.map(item => {
-                return <p>{item}</p>
-            }
-  )
-            }
-       </div>
+            text: e.target.value
+        })
 
 
-        </div>
+    }
+    onClick = (item) => {
+        if (this.state.text!==''){
+     this.setState({
+            comment: [...this.state.comment, item]
+        })
+    }
+
+
+    }
+    render() {
+        const { text, comment } = this.state
+        console.log(text)
+        return (
+            <div >
+            <div className="papper2">
+                <Paper className='PapperComment' elevation={6} style={{ padding: '10px' }}>
+                    <TextField id="filled-basic"
+                        label="Filled"
+                        variant="filled"
+                        fullWidth
+                        label="Enter comment..."
+                        value={text}
+                        onChange={this.handleOnChange}
+                    />
+                </Paper>
+                <div  >
+                     <Button onClick={() => this.onClick(text)}
+                variant="contained"
+                color="secondary"
+                size="medium"
+                className="btn" >
+                    Save
+                    </Button>
+                </div>
+
+            </div>
+
+
+               <div>
+                    {comment.map(item =>
+                        <Paper elevation={6}
+                        style={{ padding: '10px',
+                         margin: '5px',
+                         width:"700px",
+                         whiteSpace: 'pre-line'}}>
+                        <p>{item}</p>
+                        </Paper>)
+
+                    }
+                </div>
+</div>
 
         )
 

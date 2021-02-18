@@ -6,9 +6,9 @@ export default class Btn extends Component{
 
     render(){
         return(
-           <div className="btn">
-                <Button  variant="contained" color="primary">
-  Show all movie
+           <div >
+                <Button className="btn" variant="contained" color="secondary">
+  Show all
 </Button>
            </div>
 

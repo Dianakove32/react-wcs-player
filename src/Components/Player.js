@@ -25,7 +25,7 @@ class Player extends Component {
     const handleLikes = this.handleLikes;
     return (
       <div className="player">
-        <ReactPlayer   width={'800px'}  url={movie?.videoUrl || "https://youtu.be/XSs2cR2Tvuk"} />
+        <ReactPlayer controls={true}  width={'700px'}  url={movie?.videoUrl || "https://youtu.be/XSs2cR2Tvuk"} />
         <h2 className="title">{movie?.title || "Wake Me Up"}</h2>
         <p className="descript">
           {movie?.description ||

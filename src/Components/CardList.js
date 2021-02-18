@@ -1,7 +1,7 @@
 import Card from './Card';
 import { Button } from '@material-ui/core';
 import React from 'react';
-
+import '../main.css'
 
 
 class CardList extends React.Component {
@@ -23,7 +23,7 @@ class CardList extends React.Component {
 
         return (
             <div className='cardList'>
-             {isFiltered? <Button  variant="contained" color="primary" onClick={()=>showAll()}>
+             {isFiltered? <Button className='btn'  variant="contained" color="secondary"  onClick={()=>showAll()}>
   Show all movie </Button> :null}
    { isEmpty ? <p>No video</p>:null}
                 {dataF.map((el, index) =>
