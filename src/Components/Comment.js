@@ -1,29 +1,52 @@
 import { Component } from "react";
 import React from "react";
 import { Paper, TextField } from '@material-ui/core';
-
+import PapperComment from "./CommentPapper";
 class Comment extends React.Component{
-    state = {
-        searchTerm : '',
-    }
-    handleChange = (event)=> this.setState({searchTeam:event.target.value})
-    handleSubmit = (event) =>{
-        const {searchTeam}= this.state;
-     const   {onFormSubmit} = this.props
-     onFormSubmit(searchTeam)
-     event.preventDefault()
-    }
+    constructor(){
+        super()
+        this.state={
+            text:'',
+            comment:[]
+        }}
+        handleOnChange=(e)=>{
+            this.setState({
+                text: e.target.value
+            })
+        }
+        onClick=(item)=>{
+
+
+            this.setState({
+                 comment:[...this.state.comment,item]
+            })
+        }
     render(){
-        const {handleSort} = this.props
+const {text, comment}=this.state
+console.log(text)
         return(
-        <div className="papper">
-               <Paper elevation = {6} style = {{padding:'10px'}}>
+        <div className="papper2">
+               <Paper elevation = {6} style = {{padding:'10px'    }}>
 
-               <TextField fullWidth label = "Search..." >
-
-               </TextField>
-
+               <TextField id="filled-basic"
+               label="Filled"
+               variant="filled"
+                fullWidth
+                label = "Enter comment..."
+                value={text}
+                    onChange={this.handleOnChange}
+                />
        </Paper>
+       <button onClick={()=>this.onClick(text)}></button>
+       <div>
+            {comment.map(item => {
+                return <p>{item}</p>
+            }
+  )
+            }
+       </div>
+
+
         </div>
 
         )

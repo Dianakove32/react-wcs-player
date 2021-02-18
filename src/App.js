@@ -6,12 +6,15 @@ import SearchBar from "./Components/searchbar";
 import data from "./Components/data";
 import Btn from "./Components/Button";
 import Comment from "./Components/Comment";
+import PapperComment from "./Components/CommentPapper";
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       pickedMovie: null,
-      movieNameForSearch: ""
+      movieNameForSearch: "",
+
     };
     this.handleSort = this.handleSort.bind(this)
     this.handleSetMovie2 = this.handleSetMovie.bind(this);
@@ -50,8 +53,11 @@ class App extends Component {
         <SearchBar handleSort={this.handleSort} />
 
         <div className="App">
+<div>
+    <Player movie={pickedMovie} />
+ <Comment />
 
-          <Player movie={pickedMovie} />
+</div>
 
 
           <CardList handleSetMovie={handleSetMovie2}
@@ -61,7 +67,7 @@ class App extends Component {
             showAll={this.showAll} />
 
         </div>
-        <Comment />
+
         {/* <Main /> */}
       </div>
     );

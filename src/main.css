@@ -7,9 +7,13 @@
 
 }
 .papper{
-    width: 1150px;
-    margin: 0 auto;
+
+
     background-color: rgb(200, 209, 218);
+}
+.PapperComment{
+margin-top: 5px;
+
 }
 .player{
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
