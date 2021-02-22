@@ -22,7 +22,8 @@ class Comment extends React.Component {
     onClick = (item) => {
         if (this.state.text!==''){
      this.setState({
-            comment: [...this.state.comment, item]
+            comment: [...this.state.comment, item],
+            text:''
         })
     }
 
@@ -60,10 +61,11 @@ class Comment extends React.Component {
                <div>
                     {comment.map(item =>
                         <Paper elevation={6}
-                        style={{ padding: '10px',
+                         style={{ padding: '10px',
                          margin: '5px',
                          width:"700px",
                          whiteSpace: 'pre-line'}}>
+
                         <p>{item}</p>
                         </Paper>)
 
